@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <title>Hiram Kola.tech | Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles for the New Light Theme -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F3F4F6; /* Light Gray Background */
+            color: #1F2937; /* Dark Gray Text */
+        }
+
+        /* Clean header style for light theme */
+        .header-light {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        /* New text gradient for the light theme */
+        .text-gradient-light {
+            background: linear-gradient(to right, #14B8A6, #0D9488);
+            -webkit-back-ground-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Clean card style with shadow for light theme */
+        .card-light {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-light:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        /* Initial state for scroll-in animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        /* Visible state for scroll-in animations */
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 header-light">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="https://www.youtube.com/channel/UCn7wAw7OfznUtrYJ1xLpeuQ"target="_blank" class="text-2xl font-bold text-gray-800">
+                Hiram Kola<span class="text-teal-600">.tech</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#about" class="hover:text-teal-600 transition-colors duration-300">About</a>
+                <a href="#youtube" class="hover:text-teal-600 transition-colors duration-300">YouTube</a>
+                <a href="#contact" class="hover:text-teal-600 transition-colors duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#about" class="block py-3 px-6 text-center text-gray-600 hover:bg-gray-100">About</a>
+            <a href="#youtube" class="block py-3 px-6 text-center text-gray-600 hover:bg-gray-100">YouTube</a>
+            <a href="#contact" class="block py-3 px-6 text-center text-gray-600 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center pt-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-800 leading-tight">
+                    Hiram Kola<span class="text-teal-600">.tech</span>
+                </h1>
+                <p class="mt-4 text-2xl md:text-3xl font-light text-gradient-light">
+                    Explore. Build. Demystify.
+                </p>
+                <div class="mt-12">
+                    <a href="https://www.youtube.com/channel/UCn7wAw7OfznUtrYJ1xLpeuQ" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105" target="_blank">
+                        See My Channel
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-12 items-center">
+                    <div class="md:col-span-2 text-lg">
+                        <h2 class="text-4xl font-bold text-gray-800 mb-6">About Me</h2>
+                        <p class="mb-4 text-gray-600">
+                            This is where curiosity meets code. My name is Hiram Kola, a B.Tech student on a journey to explore, build, and demystify the world of technology.
+                        </p>
+                        <p class="mb-4 text-gray-600">
+                            We're starting with a deep dive into building full-stack applications, but my mission is much broader. This channel and website document my process of learning and creating across various fields of tech—from software architecture to artificial intelligence and beyond. 
+                        </p>
+                        <p class="text-gray-600">
+                            I tackle challenging projects, break down complex concepts, and share the practical skills needed to build a successful career in the tech industry.
+                        </p>
+                    </div>
+                    <div class="md:col-span-1">
+                        <!-- REPLACE the src below with a URL to your professional photo or logo -->
+                        <img src="logo.jpg" alt="Hiram Kola.tech channel logo" class="rounded-full shadow-xl mx-auto w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white">
+                </div>
+            </div>
+        </section>
+
+        <!-- YouTube Section -->
+        <section id="youtube" class="py-20 md:py-32 bg-white fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Latest From My Channel</h2>
+                <p class="text-lg text-gray-500 mb-12">Documenting my journey, one video at a time.</p>
+                
+                <!-- Video Grid: REPLACE with your actual video thumbnails and links -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <a href="https://www.youtube.com/channel/UCn7wAw7OfznUtrYJ1xLpeuQ" class="block group card-light overflow-hidden"target="_blank">
+                        <div class="relative">
+                            <img src="https://placehold.co/600x338/E5E7EB/1F2937?text=Video+1" alt="Video thumbnail" class="w-full transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4 p-4 text-gray-800">Building a Full-Stack App from Scratch</h3>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCn7wAw7OfznUtrYJ1xLpeuQ"class="block group card-light overflow-hidden"target="_blank">
+                         <div class="relative">
+                            <img src="https://placehold.co/600x338/E5E7EB/1F2937?text=Video+2" alt="Video thumbnail" class="w-full transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4 p-4 text-gray-800">What is a REST API? Explained Simply</h3>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCn7wAw7OfznUtrYJ1xLpeuQ" class="block group card-light overflow-hidden"target="_blank">
+                         <div class="relative">
+                            <img src="https://placehold.co/600x338/E5E7EB/1F2937?text=Video+3" alt="Video thumbnail" class="w-full transition-transform duration-300 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mt-4 p-4 text-gray-800">Deploying Your First Web App</h3>
+                    </a>
+                </div>
+                <div class="mt-12">
+                     <!-- REPLACE this with the link to your YouTube channel -->
+                    <a href="https://www.youtube.com/channel/UCn7wAw7OfznUtrYJ1xLpeuQ" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105" target="_blank">
+                        Visit My YouTube Channel
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Let's Connect</h2>
+                <p class="text-lg text-gray-500 mb-12">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
+                </p>
+                <a href="mailto:hiramkola.tech@gmail.com" class="text-2xl text-teal-600 hover:text-teal-500 transition-colors duration-300 font-medium">
+                    <!-- REPLACE this with your actual email address -->
+                    hiramkola.tech@gmail.com
+                </a>
+                <div class="flex justify-center space-x-8 mt-12">
+                    <!-- REPLACE '#' with your actual profile links -->
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-teal-600 transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-teal-600 transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-white">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; <span id="year"></span> Hiram Kola.tech. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // JavaScript for scroll-in animations
+        const sections = document.querySelectorAll('.fade-in-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the section is visible
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
